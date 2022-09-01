@@ -35,17 +35,17 @@ class StoryBrain {
 
 //TODO: Step 8 - Create a method called getStory() that returns the first storyTitle from _storyData.
   String getStory() {
-    return _storyData[0].storyTitle;
+    return _storyData[storyNumber].storyTitle;
   }
 
 //TODO: Step 11 - Create a method called getChoice1() that returns the text for the first choice1 from _storyData.
   String getChoice1() {
-    return _storyData[0].choice1;
+    return _storyData[storyNumber].choice1;
   }
 
 //TODO: Step 12 - Create a method called getChoice2() that returns the text for the first choice2 from _storyData.
   String getChoice2() {
-    return _storyData[0].choice2;
+    return _storyData[storyNumber].choice2;
   }
 
   //TODO: Step 16 - Create a property called storyNumber which starts with a value of 0. This will be used to track which story the user is currently viewing.
@@ -66,10 +66,15 @@ class StoryBrain {
       storyNumber = 4;
     } else if (choiceNumber == 2 && storyNumber == 2) {
       storyNumber = 5;
+    } else if (storyNumber == 3 || storyNumber == 4 || storyNumber == 5) {
+      restart();
     }
   }
-  //TODO: Step 20 - Download the story plan here: https://drive.google.com/uc?export=download&id=1KU6EghkO9Hf2hRM0756xFHgNaZyGCou3
 
+  //TODO: Step 20 - Download the story plan here: https://drive.google.com/uc?export=download&id=1KU6EghkO9Hf2hRM0756xFHgNaZyGCou3
+  void restart() {
+    storyNumber = 0;
+  }
 }
 //TODO: Step 23 - Use the storyNumber property inside getStory(), getChoice1() and getChoice2() so that it gets the updated story and choices rather than always just the first (0th) one.
 
